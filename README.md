@@ -14,7 +14,7 @@ Use this repository to submit your assignments in Backend Web Development course
 5. Enable Github issues for mentors to review your code. Go to Settings → General → Enable Issues under Features.
 6. Start submitting the assignments by dragging and dropping them in the folders.
 
-> **_For example_**, if you’re doing `Assignment 1` in Module 1, you’ll need to submit your files here - https://github.com/joinsigma/backend-web-development
+> **_For example_**, if you’re doing `Assign-1-Debug-Prog` in Module 1, you’ll need to submit your files here - https://github.com/joinsigma/backend-web-development/tree/main/Modules/Mod1-Intro-to-Node/Assignments/Assign-1-Debug-Prog
 
 > **_NOTE:_** When this repository is updated (we update it from time to time with new assignments), do make sure to sync the changes with your copy. To sync, go to your repository, click on “Fetch Upstream” then click on the “Fetch and merge” button.
 
