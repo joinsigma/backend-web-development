@@ -10,13 +10,24 @@
  */
 
 // Default javascript importing method
-const _ = require("lodash");
+// const _ = require("lodash");
 
 // ES importing method
-//  import _lodash from "lodash";
+import _ from "lodash";
 
 console.log(_.chunk([1, 2, 3, 4], 1));
 
+import inquirer from "inquirer";
 /**
  * Using Inquirer.js
  */
+let option = -1;
+
+const answer = await inquirer.prompt([
+  {
+    type: "number",
+    name: "option",
+    message: "What is your choice?",
+  },
+]);
+console.log(a.option);
