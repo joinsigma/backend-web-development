@@ -5,7 +5,7 @@
  * Use the pseudocode and translate it js code
  * Run node test-cases.js, and it should, pass all test cases
  */
-function insertionSort(unsortedList) {
+export function insertionSort(unsortedList) {
   const sortedList = unsortedList;
   return sortedList;
 }
@@ -18,12 +18,7 @@ function insertionSort(unsortedList) {
  * AND, print out the next prime number after {possiblePrimeNumber}
  * Finally, return the first prime number before, and next prime number after {possiblePrimeNumber} as a list;
  */
-function primeNumberDetector(possiblePrimeNumber) {
+export function primeNumberDetector(possiblePrimeNumber) {
   console.log(`Is ${primeNumberDetector} a prime number?`);
   return possiblePrimeNumber;
 }
-
-module.exports = {
-  insertionSort,
-  primeNumberDetector,
-};

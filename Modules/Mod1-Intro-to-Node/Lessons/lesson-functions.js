@@ -1,9 +1,13 @@
 /**
  * function definitions
  */
-
+// Function declaration
 function myNewFunction(var1, var2) {
   console.log(var1, var2);
+}
+// Function expression
+const myOtherFunction = function(var1) {
+  console.log(var1);
 }
 
 /**
