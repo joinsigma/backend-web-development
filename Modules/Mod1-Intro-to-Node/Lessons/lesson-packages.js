@@ -9,7 +9,7 @@
  *    https://lodash.com/docs/4.17.15
  */
 
-// Default javascript importing method
+// Default node importing method
 // const _ = require("lodash");
 
 // ES importing method
