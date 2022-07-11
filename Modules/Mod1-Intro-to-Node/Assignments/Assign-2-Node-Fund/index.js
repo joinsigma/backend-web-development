@@ -3,11 +3,20 @@
  * https://www.tutorialspoint.com/data_structures_algorithms/insertion_sort_algorithm.htm
  *
  * Use the pseudocode and translate it js code
- * Run node test-cases.js, and it should, pass all test cases
  */
-export function insertionSort(unsortedList) {
+function insertionSort(unsortedList) {
   const sortedList = unsortedList;
   return sortedList;
+}
+
+/**
+ * 
+ * @param {*} inputList 
+ * @returns list - reversed of ${inputList}
+ */
+function reverseList(inputList) {
+  const reversed = inputList;
+  return reversed;
 }
 
 /**
@@ -18,7 +27,22 @@ export function insertionSort(unsortedList) {
  * AND, print out the next prime number after {possiblePrimeNumber}
  * Finally, return the first prime number before, and next prime number after {possiblePrimeNumber} as a list;
  */
-export function primeNumberDetector(possiblePrimeNumber) {
+function primeNumberDetector(possiblePrimeNumber) {
   console.log(`Is ${primeNumberDetector} a prime number?`);
   return possiblePrimeNumber;
+}
+
+/**
+ * This function should take in an input list, then for each item it should:
+ *  Print every item.
+ *  If there's a prime number
+ *    Add a 4 to the end of the list.
+ *  If there's an odd number
+ *    Skip the next adjacent item in the list.
+ *  If there's an 13, 
+ *    Print "Unlucky", and end the loop.
+ * @param {*} inputArray 
+ */
+function unluckyLooping(inputArray) {
+  console.log("Unlucky");
 }
