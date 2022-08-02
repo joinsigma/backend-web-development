@@ -29,7 +29,7 @@ function printTimeTaken() {
     I don't think it will take that long.
   `);
   // Calculate how long it took
-  const howLong = "";
+  const howLong = null;
   console.log(`I took this long to run: ${howLong}secs`);
 }
 printTimeTaken();

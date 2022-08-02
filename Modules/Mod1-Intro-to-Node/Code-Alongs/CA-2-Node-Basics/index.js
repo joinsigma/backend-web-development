@@ -44,16 +44,33 @@ function selectionSortMaxFirst(inputArr) {
   return inputArr;
 }
 
+const printOutDuplicates = (arr1, arr2) => {
+  arr1.forEach((item) => {
+    if (arr2.includes(item)) {
+      console.log(item);
+    }
+  });
+};
+
 /**
  *
- * @param {*} inputNum - number to evaluate if prime or not
+ * @param {*} possiblePrimeNo - number to evaluate if prime or not
  * @returns boolean - whether prime number or not
  */
-const primeNumberDetector = (inputNum) => {
-  for (let i = 2; i < inputNum; i += 1) {
-    if (inputNum % i === 0) {
+const primeNumberDetector = (possiblePrimeNo) => {
+  if (possiblePrimeNo < 0) {
+    console.log("Prime number have to be greater than 0");
+    return;
+  }
+  if (possiblePrimeNo <= 1) {
+    return false;
+  }
+  let i = possiblePrimeNo - 1;
+  while (i > 1) {
+    if (possiblePrimeNo % i === 0) {
       return false;
     }
+    i -= 1;
   }
-  return i > 1;
+  return true;
 };

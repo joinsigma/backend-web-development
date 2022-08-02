@@ -28,7 +28,7 @@ function reverseList(inputList) {
  * Finally, return the first prime number before, and next prime number after {possiblePrimeNumber} as a list;
  */
 function primeNumberDetector(possiblePrimeNumber) {
-  console.log(`Is ${primeNumberDetector} a prime number?`);
+  console.log(`Is ${possiblePrimeNumber} a prime number?`);
   return possiblePrimeNumber;
 }
 
@@ -37,7 +37,7 @@ function primeNumberDetector(possiblePrimeNumber) {
  *  Print every item.
  *  If there's a prime number
  *    Add a 4 to the end of the list.
- *  If there's an odd number
+ *  If there's an odd number, that's not a prime
  *    Skip the next adjacent item in the list.
  *  If there's an 13, 
  *    Print "Unlucky", and end the loop.

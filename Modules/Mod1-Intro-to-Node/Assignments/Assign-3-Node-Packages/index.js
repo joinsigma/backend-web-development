@@ -3,22 +3,31 @@ import inquirer from "inquirer";
 
 /**
  * Question 1
- * Create an insertion sorting algorithm that uses lodash
+ * Create an insertion sorting algorithm in ascending order that uses lodash
  */
-
-function insertionSort(unsortedArray) {
+function insertionSortAsc(unsortedArray) {
   const sortedArray = unsortedArray;
   return sortedArray;
 }
 
 /**
  * Question 2
- * Create a questionnaire using inquirer js to ask the user about the work experience.
+ * Create an insertion sorting algorithm in descending order that uses lodash
+ */
+ function insertionSortDesc(unsortedArray) {
+  const sortedArray = unsortedArray;
+  return sortedArray;
+}
+
+/**
+ * Question 3
+ * Create a interview questionnaire for backend web develop job using inquirer.js.
  * Be sure to include these *types* of questions
  * Open ended question.
  * A numbered question.
  * A true/false question
  * A checkbox question
  * A multiple choice question.
+ * Then finally, display all the questions and answers in the pretty format 
  * */
 function createQuestionnaire() {}
