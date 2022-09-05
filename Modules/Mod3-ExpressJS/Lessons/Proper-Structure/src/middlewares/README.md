@@ -1,0 +1,2 @@
+# What does this directory contain?
+The `middlewares` directory will contain any middleware needed for the application in one place. There can be middleware for authentication, authorization, error/info logging, or any other purpose.

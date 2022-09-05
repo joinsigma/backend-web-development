@@ -1,0 +1,2 @@
+# What does this directory contain?
+The `controllers` directory will contain all the controllers of the application. Controllers are the function definitions of each of routes that you've defined for the application. 

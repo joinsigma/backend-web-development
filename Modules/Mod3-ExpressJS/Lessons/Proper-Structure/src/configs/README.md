@@ -1,0 +1,2 @@
+# What does this directory contain?
+The `configs` directory will contain all the configs related to the applications. This could be some access credentials (could be derived from the environment file), or it could be certain constants for the applications, i.e. what tags to use for logging.

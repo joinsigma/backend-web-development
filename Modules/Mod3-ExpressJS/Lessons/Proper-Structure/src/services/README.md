@@ -1,0 +1,2 @@
+# What does this directory contain?
+This `services` folder will contain all of the business logic needed for the application. Varying from calling the database for CRUD operations to calling 3rd party libraries.
