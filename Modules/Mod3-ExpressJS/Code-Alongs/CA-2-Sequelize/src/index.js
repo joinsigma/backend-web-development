@@ -15,11 +15,7 @@ app.use("/cars", carRouter);
 
 app.listen(PORT, async () => {
   try {
-    const db = startDbConnection(
-      process.env.DB_HOST,
-      process.env.DB_USER,
-      process.env.DB_PASS
-    );
+    const db = startDbConnection();
     if (!_.isEmpty(db)) {
       await db.sequelize.authenticate();
       console.log("Connection has been established successfully.");

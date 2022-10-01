@@ -7,6 +7,7 @@ import { startDbConnection } from "./models/index.js";
 
 dotenv.config();
 const app = express();
+app.use(express.json());
 
 const PORT = 8000;
 

@@ -18,6 +18,9 @@ const CarModel = (sequelize, DataTypes) => {
       price: {
         type: DataTypes.FLOAT,
       },
+      regNo: {
+        type: DataTypes.STRING,
+      },
       regDate: {
         type: DataTypes.DATE,
       },

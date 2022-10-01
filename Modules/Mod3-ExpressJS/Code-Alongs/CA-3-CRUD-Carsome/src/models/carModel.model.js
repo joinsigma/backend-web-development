@@ -21,18 +21,16 @@ const CarModelModel = (sequelize, DataTypes) => {
       body_type: {
         type: DataTypes.INTEGER,
       },
-      created_by: {
+      createdBy: {
         type: DataTypes.INTEGER,
       },
-      updated_by: {
+      updatedBy: {
         type: DataTypes.INTEGER,
       },
     },
     {
       tableName: "car_model",
       timestamps: true,
-      createdAt: "created_at",
-      updatedAt: "updated_at",
     }
   );
 };
