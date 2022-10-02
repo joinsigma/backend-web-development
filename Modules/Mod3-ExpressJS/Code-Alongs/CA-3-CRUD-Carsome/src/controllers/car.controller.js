@@ -14,7 +14,13 @@ class CarController {
   }
 
   async createNewCar(req, res) {
-    const result = await carService.saveNewCar(req.body);
+    const body = req.body;
+    let result;
+    if (body.carModel.id) {
+      result = await carService.saveNewCar(req.body);
+    } else {
+      result = await carService.saveNewCarWithNewModel(req.body);
+    }
     if (result) {
       return res.status(201).json({
         data: `New car created ${result}`,

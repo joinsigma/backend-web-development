@@ -5,6 +5,7 @@ const CarModelModel = (sequelize, DataTypes) => {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
+        autoIncrement: true,
       },
       name: {
         type: DataTypes.STRING,
@@ -18,7 +19,7 @@ const CarModelModel = (sequelize, DataTypes) => {
       transmission: {
         type: DataTypes.CHAR,
       },
-      body_type: {
+      bodyType: {
         type: DataTypes.INTEGER,
       },
       createdBy: {

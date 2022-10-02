@@ -6,7 +6,15 @@ export const carIdParams = Joi.object({
 
 export const createCarBody = Joi.object({
   carLotId: Joi.number().integer().required(),
-  carModelId: Joi.number().integer().required(),
+  carModel: Joi.object({
+    id: Joi.number().integer(),
+    name: Joi.string(),
+    make: Joi.string(),
+    year: Joi.number().integer(),
+    transmission: Joi.string().allow("auto", "manual"),
+    bodyType: Joi.number().integer(),
+    createdBy: Joi.number().integer(),
+  }).required(),
   colour: Joi.string().default("black"),
   price: Joi.number().required(),
   regNo: Joi.string(),
