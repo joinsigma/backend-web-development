@@ -1,6 +1,5 @@
 import _omit from "lodash/omit.js";
 import { getConnection } from "../models/index.js";
-import carModelService from "./carModel.service.js";
 
 class UserService {
   db = getConnection();
