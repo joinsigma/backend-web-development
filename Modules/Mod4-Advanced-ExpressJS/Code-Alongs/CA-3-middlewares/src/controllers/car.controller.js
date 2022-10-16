@@ -1,10 +1,14 @@
 import carService from "../services/car.service.js";
 
 class CarController {
-  async getCars(req, res) {
-    return res.status(200).json({
-      data: await carService.getAllCars(),
-    });
+  async getCars(req, res, next) {
+    try {
+      const allCars = carService.getAllCars();
+      throw new Error("Testing error");
+      return res.json({ data: allCars });
+    } catch (error) {
+      next(error);
+    }
   }
   async getCarById(req, res) {
     const { carId } = req.params;

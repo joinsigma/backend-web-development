@@ -4,15 +4,18 @@ import _ from "lodash";
 import healthRouter from "./routes/heath.route.js";
 import carRouter from "./routes/car.route.js";
 import { startDbConnection } from "./models/index.js";
+import errorMiddleware from "./middlewares/error.middleware.js";
 
 dotenv.config();
 const app = express();
 app.use(express.json());
 
-const PORT = 8000;
+const PORT = process.env.PORT;
 
 app.use("", healthRouter);
 app.use("/cars", carRouter);
+
+app.use(errorMiddleware);
 
 app.listen(PORT, async () => {
   try {

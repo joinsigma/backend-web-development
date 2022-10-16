@@ -6,12 +6,12 @@ class CarService {
   db = getConnection();
 
   getAllCars = async () => {
-    const allCars = await db.car.findAll();
+    const allCars = await this.db.car.findAll();
     return allCars;
   };
 
   getCarById = async (id) => {
-    const car = await db.car.findByPk(id);
+    const car = await this.db.car.findByPk(id);
     return car;
   };
 
