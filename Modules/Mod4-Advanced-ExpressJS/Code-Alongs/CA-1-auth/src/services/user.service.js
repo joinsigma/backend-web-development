@@ -5,8 +5,10 @@ class UserService {
   db = getConnection();
 
   findByEmail = async (email) => {
-    const user = await db.user.findOne({
-      email,
+    const user = await this.db.user.findOne({
+      where: {
+        email,
+      },
     });
     if (!user) {
       return;
@@ -25,9 +27,11 @@ class UserService {
   };
 
   findByEmailPassword = async (email, password) => {
-    const user = await db.user.findOne({
-      email,
-      password,
+    const user = await this.db.user.findOne({
+      where: {
+        email,
+        password,
+      },
     });
     if (!user) {
       return;
