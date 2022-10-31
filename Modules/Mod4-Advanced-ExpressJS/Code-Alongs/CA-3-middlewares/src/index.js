@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import express from "express";
 import _ from "lodash";
 import healthRouter from "./routes/heath.route.js";
+import authRouter from "./routes/auth.route.js";
 import carRouter from "./routes/car.route.js";
 import { startDbConnection } from "./models/index.js";
 import errorMiddleware from "./middlewares/error.middleware.js";
@@ -13,6 +14,7 @@ app.use(express.json());
 const PORT = process.env.PORT;
 
 app.use("", healthRouter);
+app.use("", authRouter);
 app.use("/cars", carRouter);
 
 app.use(errorMiddleware);

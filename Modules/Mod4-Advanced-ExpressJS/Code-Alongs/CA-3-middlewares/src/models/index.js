@@ -4,6 +4,7 @@ import Sequelize from "sequelize";
 // Models
 import CarModel from "./car.model.js";
 import CarModelModel from "./carModel.model.js";
+import UserModel from "./user.model.js";
 
 const db = {};
 
@@ -17,6 +18,7 @@ export const startDbConnection = (hostname, username, password) => {
     db.sequelize = sequelize;
     db.car = CarModel(sequelize, Sequelize.DataTypes);
     db.carModel = CarModelModel(sequelize, Sequelize.DataTypes);
+    db.user = UserModel(sequelize, Sequelize.DataTypes);
 
     db.carModel.hasMany(db.car, {
       foreignKey: "carModelId",

@@ -15,11 +15,15 @@ class CarService {
     return car;
   };
 
-  saveNewCar = async (newCarData) => {
+  saveNewCar = async (newCarData, userId) => {
     try {
       const { id: carModelId } = newCarData.carModel;
       newCarData = _omit(newCarData, ["carModel"]);
-      const newCar = await this.db.car.create({ carModelId, ...newCarData });
+      const newCar = await this.db.car.create({
+        createdBy: userId,
+        carModelId,
+        ...newCarData,
+      });
       console.log(newCar.toJSON());
       return newCar.id;
     } catch (err) {
@@ -28,7 +32,7 @@ class CarService {
     }
   };
 
-  saveNewCarWithNewModel = async (newCarData) => {
+  saveNewCarWithNewModel = async (newCarData, userId) => {
     try {
       const carModelId = await carModelService.saveNewCarModel(
         newCarData.carModel
@@ -37,7 +41,11 @@ class CarService {
         throw new Error("Unable to create CarModel");
       }
       newCarData = _omit(newCarData, ["carModel"]);
-      const newCar = await this.db.car.create({ carModelId, ...newCarData });
+      const newCar = await this.db.car.create({
+        createdBy: userId,
+        carModelId,
+        ...newCarData,
+      });
       return newCar.id;
     } catch (err) {
       console.log("Error creating new Car", err);

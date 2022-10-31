@@ -1,14 +1,10 @@
 import carService from "../services/car.service.js";
 
 class CarController {
-  async getCars(req, res, next) {
-    try {
-      const allCars = carService.getAllCars();
-      throw new Error("Testing error");
-      return res.json({ data: allCars });
-    } catch (error) {
-      next(error);
-    }
+  async getCars(req, res) {
+    return res.status(200).json({
+      data: await carService.getAllCars(),
+    });
   }
   async getCarById(req, res) {
     const { carId } = req.params;
@@ -21,9 +17,9 @@ class CarController {
     const body = req.body;
     let result;
     if (body.carModel.id) {
-      result = await carService.saveNewCar(req.body);
+      result = await carService.saveNewCar(req.body, req.userId);
     } else {
-      result = await carService.saveNewCarWithNewModel(req.body);
+      result = await carService.saveNewCarWithNewModel(req.body, req.userId);
     }
     if (result) {
       return res.status(201).json({

@@ -21,7 +21,6 @@ export const createCarBody = Joi.object({
   regDate: Joi.date(),
   initialMileage: Joi.number().integer(),
   status: Joi.string().default(null),
-  createdBy: Joi.number().integer().required(),
 });
 
 export const updateCarBody = Joi.object({
