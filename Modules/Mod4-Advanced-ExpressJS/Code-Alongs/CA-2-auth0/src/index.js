@@ -3,6 +3,7 @@ import express from "express";
 import _ from "lodash";
 import healthRouter from "./routes/heath.route.js";
 import carRouter from "./routes/car.route.js";
+import authRouter from "./routes/auth.route.js";
 import { startDbConnection } from "./models/index.js";
 
 dotenv.config();
@@ -12,6 +13,7 @@ app.use(express.json());
 const PORT = 8000;
 
 app.use("", healthRouter);
+app.use("", authRouter);
 app.use("/cars", carRouter);
 
 app.listen(PORT, async () => {
