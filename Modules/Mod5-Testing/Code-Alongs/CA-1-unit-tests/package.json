@@ -1,27 +1,15 @@
 {
-  "name": "carsome-clone-server",
+  "name": "unit-testing-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "math.js",
   "type": "module",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^5.1.0",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.1",
-    "express-joi-validation": "^5.0.1",
-    "joi": "^17.6.2",
-    "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.21",
-    "mysql2": "^2.3.3",
-    "nodemon": "^2.0.20",
-    "sequelize": "^6.23.1"
-  },
   "devDependencies": {
     "jest": "^29.3.1"
   }
