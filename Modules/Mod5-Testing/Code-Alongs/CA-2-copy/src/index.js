@@ -20,7 +20,6 @@ app.use("/cars", carRouter);
 app.use(errorMiddleware);
 
 app.listen(PORT, async () => {
-  console.log(process.env.DB_HOST, process.env.DB_USER, process.env.DB_PASS);
   try {
     const db = startDbConnection(
       process.env.DB_HOST,
@@ -34,5 +33,5 @@ app.listen(PORT, async () => {
   } catch (error) {
     console.error("Unable to connect to the database:", error);
   }
-  console.log("Carsome-clone running at port", PORT);
+  console.log(`Carsome-clone running at port: ${PORT} in ${process.env.NODE_ENV} environment`);
 });

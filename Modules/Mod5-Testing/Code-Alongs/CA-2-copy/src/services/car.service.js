@@ -5,10 +5,10 @@ import carModelService from "./carModel.service.js";
 class CarService {
   db = getConnection();
 
-  async getAllCars() {
+  getAllCars = async () => {
     const allCars = await this.db.car.findAll();
     return allCars;
-  }
+  };
 
   getCarById = async (id) => {
     const car = await this.db.car.findByPk(id);

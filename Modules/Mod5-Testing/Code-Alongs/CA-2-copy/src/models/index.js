@@ -1,6 +1,3 @@
-import iconv from "iconv-lite";
-import encodings from "iconv-lite/encodings";
-iconv.encodings = encodings;
 import dbConfig from "../config/db.config.js";
 import Sequelize from "sequelize";
 
@@ -11,18 +8,14 @@ import UserModel from "./user.model.js";
 
 const db = {};
 
-export const startDbConnection = (
-  hostname,
-  username,
-  password,
-  database = null
-) => {
+export const startDbConnection = (hostname, username, password) => {
+  const env = process.env.NODE_ENV;
   let sequelize = null;
   if (!sequelize) {
-    sequelize = new Sequelize(database, username, password, {
+    sequelize = new Sequelize(dbConfig[env].DB, username, password, {
       host: hostname,
-      dialect: dbConfig.dialect,
-      logging: false,
+      dialect: dbConfig[env].dialect,
+      logging: env === "test" ? false : console.log,
     });
     db.sequelize = sequelize;
     db.car = CarModel(sequelize, Sequelize.DataTypes);
@@ -43,8 +36,4 @@ export const startDbConnection = (
 
 export const getConnection = () => {
   return db;
-};
-
-export const closeConnection = () => {
-  db.sequelize.close();
 };

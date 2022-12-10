@@ -2,7 +2,7 @@ FROM node:16.17.1-slim
 
 WORKDIR /usr/src/app
 
-# copying all the files from your file system to container file system
+# # copying all the files from your file system to container file system
 COPY package.json .
 COPY package-lock.json .
 
@@ -15,7 +15,7 @@ RUN npm install
 COPY . .
 
 #expose the port
-EXPOSE 8000
+EXPOSE 8080
 
 # command to run when intantiate an image
 CMD ["node", "src/index.js"]
