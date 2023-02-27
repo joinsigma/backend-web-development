@@ -1,4 +1,5 @@
-# Assignment 1 - Create Shopee-clone Server
+# Assignment 1 - Create ShopApp Server
+
 1. Create a new express server with the folder structure defined in the code along and the lesson.
 2. Create a mock data for
     * User table

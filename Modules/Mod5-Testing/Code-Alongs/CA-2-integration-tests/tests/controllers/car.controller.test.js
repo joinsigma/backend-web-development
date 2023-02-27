@@ -1,13 +1,12 @@
 import { jest } from "@jest/globals";
 import request from "supertest";
 import express from "express";
-import carController from "../../src/controllers/car.controller";
 import carRouter from "../../src/routes/car.route.js";
 
-import carService from "../../src/services/car.service";
+import carService from "../../src/services/car.service.js";
 jest.mock("../../src/services/car.service.js");
 
-describe("test carController", () => {
+describe("should test carController", () => {
   let server, agent;
 
   beforeAll((done) => {
@@ -22,20 +21,8 @@ describe("test carController", () => {
     });
   });
 
-  it("should getCarById", async () => {
-    const returnCar = {
-      id: 1,
-      make: "Car",
-    };
-    carService.getCarById = jest.fn();
-    carService.getCarById.mockResolvedValue(returnCar);
-
-    const response = await agent
-      .get("/cars/1")
-      .expect("Content-Type", /json/)
-      .expect(200);
-
-    expect(response).toBeDefined();
+  afterAll(() => {
+    server.close();
   });
 
   it("should getCars", async () => {
@@ -57,12 +44,25 @@ describe("test carController", () => {
       .expect("Content-Type", /json/)
       .expect(200);
 
-    console.log(response.body);
     expect(response).toBeDefined();
     expect(response.body).toEqual({ data: returnCars });
   });
 
-  afterAll(() => {
-    server.close();
+  it("should getCarById", async () => {
+    const returnCar = {
+      id: 1,
+      make: "Toyata",
+    };
+    carService.getCarById = jest.fn();
+    carService.getCarById.mockResolvedValue(returnCar);
+
+    const response = await agent
+      .get("/cars/1")
+      .expect("Content-Type", /json/)
+      .expect(200);
+
+    expect(response).toBeDefined();
+    expect(response.body).toEqual({ data: returnCar });
+    expect(response.body.data).toHaveProperty("id");
   });
 });
