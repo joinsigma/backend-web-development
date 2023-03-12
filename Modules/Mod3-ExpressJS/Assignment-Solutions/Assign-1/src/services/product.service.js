@@ -1,4 +1,4 @@
-export const allCars = [
+export const allProducts = [
   {
     id: 1,
     carLotId: 1,
@@ -56,14 +56,14 @@ export const allCars = [
   },
 ];
 
-class CarService {
-  getAllCars = async () => {
-    return allCars;
+class ProductService {
+  getAllProducts = async () => {
+    return allProducts;
   };
 
-  getCarById = (id) => {
-    return allCars.find((car) => car.id === id);
+  getProductById = (id) => {
+    return allProducts.find((product) => car.id === id);
   };
 }
 
-export default new CarService();
+export default new ProductService();

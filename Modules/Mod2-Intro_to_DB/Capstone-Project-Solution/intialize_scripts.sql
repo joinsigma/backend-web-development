@@ -1,4 +1,4 @@
-CREATE SCHEMA `booking_app`;
+CREATE DATABASE IF NOT EXISTS `booking_app`;
 
 CREATE TABLE `booking_app`.`user` (
     `id` INT NOT NULL AUTO_INCREMENT,
