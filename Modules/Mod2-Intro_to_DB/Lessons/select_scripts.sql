@@ -18,6 +18,12 @@ FROM
 WHERE
     id = 1;
 
+-- SELECT DISTINCT lastNames
+SELECT DISTINCT
+    lastName
+FROM
+    `car_app`.`user`;
+
 -- SELECT WHERE CLAUSE, firstName is Pavi
 SELECT
     *
