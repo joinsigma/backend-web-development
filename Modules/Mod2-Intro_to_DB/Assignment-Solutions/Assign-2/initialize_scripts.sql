@@ -114,13 +114,129 @@ CREATE TABLE `shop_app`.`payment` (
   CONSTRAINT `payment_order_orderId` FOREIGN KEY (`orderId`) REFERENCES `shop_app`.`order` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+INSERT INTO
+  shop_app.user (firstName, lastName, email, password, type)
+VALUES
+  (
+    'John',
+    'Doe',
+    'john.doe@example.com',
+    'pass123',
+    'customer'
+  );
+
+INSERT INTO
+  shop_app.user (firstName, lastName, email, password, type)
+VALUES
+  (
+    'Jane',
+    'Smith',
+    'jane.smith@example.com',
+    'pwd456',
+    'admin'
+  );
+
+INSERT INTO
+  shop_app.user (firstName, lastName, email, password, type)
+VALUES
+  (
+    'Bob',
+    'Johnson',
+    'bob.johnson@example.com',
+    'password',
+    'customer'
+  );
+
+INSERT INTO
+  shop_app.user (firstName, lastName, email, password, type)
+VALUES
+  (
+    'Samantha',
+    'Lee',
+    'samantha.lee@example.com',
+    'abc123',
+    'owner'
+  );
+
+INSERT INTO
+  shop_app.user (firstName, lastName, email, password, type)
+VALUES
+  (
+    'Alex',
+    'Wong',
+    'alex.wong@example.com',
+    'passw0rd',
+    'customer'
+  );
+
+-- Insert script for productDetail table
+INSERT INTO
+  `shop_app`.`productDetail` (`name`, `description`, `variant`, `createdBy`)
+VALUES
+  (
+    'Shirt',
+    'A comfortable and stylish shirt for everyday wear',
+    'Clothing',
+    4
+  ),
+  (
+    'Jeans',
+    'A durable pair of jeans for casual wear',
+    'Clothing',
+    4
+  ),
+  (
+    'Sneakers',
+    'A stylish and comfortable pair of sneakers',
+    'Shoes',
+    4
+  ),
+  (
+    'Sunglasses',
+    'Stylish sunglasses for sunny days',
+    'Glasses',
+    4
+  ),
+  (
+    'Tennis Racket',
+    'A high-quality tennis racket, weighed at 300g',
+    'Sports Equipment',
+    4
+  ),
+  (
+    'Backpack',
+    'A durable and stylish backpack for everyday use',
+    'Storage/Suitcase',
+    4
+  );
+
+-- Insert script for product table
+INSERT INTO
+  `shop_app`.`product` (
+    `id`,
+    `productDetailId`,
+    `storeId`,
+    `price`,
+    `quantity`,
+    `status`,
+    `createdBy`
+  )
+VALUES
+  (1, 1, 1, 29.99, 100, 'In stock', 4),
+  (2, 2, 1, 49.99, 50, 'Out of stock', 4),
+  (3, 3, 1, 79.99, 75, 'In stock', 4),
+  (4, 4, 1, 99.99, 25, 'In stock', 4),
+  (5, 5, 1, 199.99, 10, 'In stock', 4),
+  (6, 6, 1, 149.99, 20, 'Out of stock', 4);
+
 -- Get all the Products that are “Out of Stock”
 SELECT
   *
 FROM
   product
 WHERE
-  quantity = 0;
+  status LIKE 'Out of stock'
+  OR quantity = 0;
 
 -- Get all Payments that have the status “payment_failed”
 SELECT

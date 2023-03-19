@@ -19,10 +19,10 @@ export const startDbConnection = (hostname, username, password) => {
     db.carModel = CarModelModel(sequelize, Sequelize.DataTypes);
 
     db.carModel.hasMany(db.car, {
-      foreignKey: "car_model_id",
+      foreignKey: "carModelId",
     });
     db.car.belongsTo(db.carModel, {
-      foreignKey: "car_model_id",
+      foreignKey: "carModelId",
     });
 
     db.sequelize.sync();

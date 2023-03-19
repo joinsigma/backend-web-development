@@ -1,7 +1,7 @@
 class HealthController {
   getHealthCheck(req, res) {
     return res.status(200).json({
-      name: "carsome-clone-api",
+      name: "shop-app",
       version: "V1",
       date: Date.now(),
     });

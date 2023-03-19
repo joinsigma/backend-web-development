@@ -5,11 +5,12 @@ const CarModel = (sequelize, DataTypes) => {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
+        autoIncrement: true,
       },
-      car_lot_id: {
+      carLotId: {
         type: DataTypes.INTEGER,
       },
-      car_model_id: {
+      carModelId: {
         type: DataTypes.INTEGER,
       },
       colour: {
@@ -30,18 +31,16 @@ const CarModel = (sequelize, DataTypes) => {
       status: {
         type: DataTypes.STRING,
       },
-      created_by: {
+      createdBy: {
         type: DataTypes.INTEGER,
       },
-      updated_by: {
+      updatedBy: {
         type: DataTypes.INTEGER,
       },
     },
     {
       tableName: "car",
       timestamps: true,
-      createdAt: "created_at",
-      updatedAt: "updated_at",
     }
   );
 };

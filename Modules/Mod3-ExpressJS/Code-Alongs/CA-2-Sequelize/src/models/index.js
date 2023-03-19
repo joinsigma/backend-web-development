@@ -10,15 +10,10 @@ const db = {};
 export const startDbConnection = (hostname, username, password) => {
   let sequelize = null;
   if (!sequelize) {
-    sequelize = new Sequelize(
-      dbConfig.DB,
-      process.env.DB_USER,
-      process.env.DB_PASS,
-      {
-        host: process.env.DB_HOST,
-        dialect: dbConfig.dialect,
-      }
-    );
+    sequelize = new Sequelize(dbConfig.DB, username, password, {
+      host: hostname,
+      dialect: dbConfig.dialect,
+    });
     db.sequelize = sequelize;
     db.car = CarModel(sequelize, Sequelize.DataTypes);
     db.carModel = CarModelModel(sequelize, Sequelize.DataTypes);
