@@ -1,12 +1,13 @@
 import { getConnection } from "../models/index.js";
-const db = getConnection();
-const Product = db.product;
 
 class ProductService {
+  db = getConnection();
+  Product = this.db.product;
+
   getAllProducts = async (storeId, status) => {
     let allProducts = [];
     if (storeId && status) {
-      allProducts = await Product.findAll({
+      allProducts = await this.Product.findAll({
         where: {
           storeId: storeId,
           status: {
@@ -15,13 +16,13 @@ class ProductService {
         },
       });
     } else if (storeId) {
-      allProducts = await Product.findAll({
+      allProducts = await this.Product.findAll({
         where: {
           storeId: storeId,
         },
       });
     } else if (status) {
-      allProducts = await Product.findAll({
+      allProducts = await this.Product.findAll({
         where: {
           status: {
             [Op.like]: status,
@@ -29,13 +30,13 @@ class ProductService {
         },
       });
     } else {
-      allProducts = await Product.findAll();
+      allProducts = await this.Product.findAll();
     }
     return allProducts;
   };
 
   getProductById = async (id) => {
-    const product = await Product.findByPk(id);
+    const product = await this.Product.findByPk(id);
     return product;
   };
 }
