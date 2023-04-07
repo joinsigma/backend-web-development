@@ -1,7 +1,8 @@
 {
-  "name": "mod-4-assignment-3-soln",
+  "name": "mod-5-assignment-2-soln",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
