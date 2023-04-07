@@ -6,6 +6,3 @@ Make sure to get 100% test coverage, after running the command `npm test`
   * src/utils
     * hash.util.js
     * jwt.util.js
-  * src/middlewares
-    * auth.middleware.js
-    * error.middleware.js
