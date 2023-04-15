@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `shop_app`.`user` (
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
 );
 
-CREATE TABLE `store` (
+CREATE TABLE IF NOT EXISTS `shop_app`.`store` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(90) NOT NULL,
   `ownerId` int NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE `store` (
   CONSTRAINT `store_user_ownerId` FOREIGN KEY (`ownerId`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
-CREATE TABLE `shop_app`.`productDetail` (
+CREATE TABLE IF NOT EXISTS `shop_app`.`productDetail` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `description` VARCHAR(255) NULL,
@@ -115,7 +115,7 @@ CREATE TABLE `shop_app`.`payment` (
 );
 
 INSERT INTO
-  shop_app.user (firstName, lastName, email, password, type)
+  `shop_app`.`user` (firstName, lastName, email, password, type)
 VALUES
   (
     'John',
@@ -126,7 +126,7 @@ VALUES
   );
 
 INSERT INTO
-  shop_app.user (firstName, lastName, email, password, type)
+  `shop_app`.`user` (firstName, lastName, email, password, type)
 VALUES
   (
     'Jane',
@@ -137,7 +137,7 @@ VALUES
   );
 
 INSERT INTO
-  shop_app.user (firstName, lastName, email, password, type)
+  `shop_app`.`user` (firstName, lastName, email, password, type)
 VALUES
   (
     'Bob',
@@ -148,7 +148,7 @@ VALUES
   );
 
 INSERT INTO
-  shop_app.user (firstName, lastName, email, password, type)
+  `shop_app`.`user` (firstName, lastName, email, password, type)
 VALUES
   (
     'Samantha',
@@ -159,7 +159,7 @@ VALUES
   );
 
 INSERT INTO
-  shop_app.user (firstName, lastName, email, password, type)
+  `shop_app`.`user` (firstName, lastName, email, password, type)
 VALUES
   (
     'Alex',
@@ -168,6 +168,8 @@ VALUES
     'passw0rd',
     'customer'
   );
+
+INSERT INTO `shop_app`.`store` (`id`, `name`, `ownerId`, `address`, `createdBy`) VALUES ('1', 'A Convient Store', '4', 'Online Shop', '2');
 
 -- Insert script for productDetail table
 INSERT INTO
