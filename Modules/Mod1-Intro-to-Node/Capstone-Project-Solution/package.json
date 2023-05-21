@@ -1,4 +1,5 @@
 {
+  "name": "module-1-capstone-project-soln",
   "type": "module",
   "dependencies": {
     "inquirer": "^9.0.0",

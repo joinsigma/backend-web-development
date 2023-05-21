@@ -7,14 +7,13 @@
 function insertionSort(unsortedList) {
   let n = unsortedList.length;
   for (let i = 1; i < n; i++) {
-    let temp = unsortedList[i];
-    let j = lodash.findIndex(unsortedList.slice(0, i), (n) => {
-      return temp <= n;
-    });
-    if (j === -1) {
-      j = i;
+    let current = unsortedList[i];
+    let j = i - 1;
+    while (j > -1 && current < unsortedList[j]) {
+      unsortedList[j + 1] = unsortedList[j];
+      j--;
     }
-    unsortedList.splice(j, 0, temp);
+    unsortedList[j + 1] = current;
   }
   return unsortedList;
 }
