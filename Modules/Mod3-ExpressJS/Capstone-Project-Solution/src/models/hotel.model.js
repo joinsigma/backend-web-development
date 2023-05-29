@@ -1,30 +1,36 @@
-const { Sequelize } = require("sequelize");
-
-const PaymentModel = (sequelize, DataTypes) => {
+const HotelModel = (sequelize, DataTypes) => {
   return sequelize.define(
-    "payment",
+    "hotel",
     {
       id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         primaryKey: true,
         autoIncrement: true,
       },
-      orderId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      paymentMethod: {
+      name: {
         type: DataTypes.STRING(45),
         allowNull: false,
       },
-      amountPaid: {
-        type: DataTypes.DOUBLE,
+      address: {
+        type: DataTypes.STRING(255),
         allowNull: false,
       },
-      status: {
+      rating: {
         type: DataTypes.STRING(45),
-        allowNull: true,
-        defaultValue: "unpaid",
+        defaultValue: null,
+      },
+      checkInTime: {
+        type: DataTypes.STRING(25),
+        allowNull: false,
+      },
+      checkOutTime: {
+        type: DataTypes.STRING(25),
+        allowNull: false,
+      },
+      amenities: {
+        type: DataTypes.STRING(255),
+        defaultValue: null,
       },
       createdBy: {
         type: DataTypes.INTEGER,
@@ -33,24 +39,23 @@ const PaymentModel = (sequelize, DataTypes) => {
       createdAt: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
+        defaultValue: DataTypes.NOW,
       },
       updatedBy: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        defaultValue: null,
       },
       updatedAt: {
         type: DataTypes.DATE,
         allowNull: true,
         defaultValue: null,
-        onUpdate: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
     },
     {
-      tableName: "payment",
+      tableName: "hotel",
       timestamps: true,
     }
   );
 };
 
-export default PaymentModel;
+export default HotelModel;

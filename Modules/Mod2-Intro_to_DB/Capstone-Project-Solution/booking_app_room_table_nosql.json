@@ -1,3 +1,46 @@
 [
-    
+  {
+    "_id": {
+      "$oid": "6474bec37f7c72410602b8e7"
+    },
+    "hotelId": 1,
+    "price": 100,
+    "status": "available",
+    "name": "King Room",
+    "noOfBeds": 2,
+    "description": "A room with a view, and a king size bed",
+    "roomType": "suite",
+    "containsAlcohol": true
+  },
+  {
+    "_id": {
+      "$oid": "6474bf887f7c72410602b8e9"
+    },
+    "hotelId": 1,
+    "price": 11200,
+    "status": "available",
+    "name": "Sunset Blvd",
+    "noOfBeds": 4,
+    "noOfRooms": 5,
+    "noOfBathrooms": 7,
+    "hasBathTub": true,
+    "containsAlcohol": true,
+    "hasIndoorPool": true,
+    "description": "A grand villa by the beach",
+    "roomType": "villa"
+  },
+  {
+    "_id": {
+      "$oid": "6474bfec7f7c72410602b8ea"
+    },
+    "hotelId": 2,
+    "price": 40,
+    "status": "taken",
+    "name": "Budget Room",
+    "noOfBeds": 1,
+    "description": "A simple budget room",
+    "roomType": "suite",
+    "containsSnacks": true,
+    "snacksProvided": "nuts, almonds, water"
+  }
 ]

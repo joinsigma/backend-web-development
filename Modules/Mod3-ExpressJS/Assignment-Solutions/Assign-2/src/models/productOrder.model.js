@@ -1,30 +1,34 @@
 const { Sequelize } = require("sequelize");
 
-const PaymentModel = (sequelize, DataTypes) => {
+const ProductOrderModel = (sequelize, DataTypes) => {
   return sequelize.define(
-    "payment",
+    "ProductOrder",
     {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
+      productId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
       orderId: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      paymentMethod: {
-        type: DataTypes.STRING(45),
-        allowNull: false,
-      },
-      amountPaid: {
-        type: DataTypes.DOUBLE,
-        allowNull: false,
-      },
-      status: {
-        type: DataTypes.STRING(45),
+      quantity: {
+        type: DataTypes.INTEGER,
         allowNull: true,
-        defaultValue: "unpaid",
+        defaultValue: 1,
+      },
+      review: {
+        type: DataTypes.STRING(255),
+        allowNull: true,
+      },
+      rating: {
+        type: DataTypes.TINYINT,
+        allowNull: true,
       },
       createdBy: {
         type: DataTypes.INTEGER,
@@ -47,10 +51,10 @@ const PaymentModel = (sequelize, DataTypes) => {
       },
     },
     {
-      tableName: "payment",
+      tableName: "productOrder",
       timestamps: true,
     }
   );
 };
 
-export default PaymentModel;
+export default ProductOrderModel;

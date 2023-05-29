@@ -28,3 +28,9 @@ I want to start a company to help people book hotels through a website. I’ve a
 For each room, it would need the name, a description of the room, price of the room per night, number of guests it can hold. Each customer, will be able to making a booking of more than one room at a time, we’ll need their check-in date, check-out date, the total amount to be owed for the booking, the customer is able to leave a review per room they made in the booking, this will later affect the overall rating of the hotel.
 
 We also need to keep track of the customer payment of each booking, for this we’ll need the payment method, payment amount, and the status of each payment. Finally, for each customer, we’ll need their name, login details, passport and passport validity, additionally, admin users of the application will be the one's to control the data of the application.
+
+## Solution ~ Explanation
+
+I have included a solution that has 5 records in the exported *json* file.
+
+I picked both the Room and RoomDetail to be replaced by a NoSQL table, because using the properties of a NoSQL table, I am able to add new fields to the describe the room with new attributes such as `hasIndoorPool`, `noOfRooms`, `containsSnacks`, `containsAlcohol`. These new fields describe the room, but they are specific to each room.
