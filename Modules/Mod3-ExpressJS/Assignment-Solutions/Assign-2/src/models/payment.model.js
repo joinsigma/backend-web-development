@@ -1,4 +1,4 @@
-const { Sequelize } = require("sequelize");
+import Sequelize from "sequelize";
 
 const PaymentModel = (sequelize, DataTypes) => {
   return sequelize.define(

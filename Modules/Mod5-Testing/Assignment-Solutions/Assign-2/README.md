@@ -10,3 +10,11 @@ You will have to write integrations tests for:
   * Create Mock methods for your service calls under the controller methods
 
 Try to get as close as possible to 100% test coverage. If you are unable test a certain file or files, please state which file you aren't able to test in the Github Issue you will create for the submission of this assignment.
+
+## Running the tests
+
+First to install the necessary packages
+`npm install`
+
+To run all the test cases
+`npm test`

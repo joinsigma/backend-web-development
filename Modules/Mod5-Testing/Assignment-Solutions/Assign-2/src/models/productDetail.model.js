@@ -1,4 +1,4 @@
-const { Sequelize } = require("sequelize");
+import Sequelize from "sequelize";
 
 const ProductDetailModel = (sequelize, DataTypes) => {
   return sequelize.define(
