@@ -18,3 +18,11 @@ You will have to:
       * Create/Update a Hotel Room.
   * Error handling middleware, where it catches any unhandled errors in the application, and displays a softer message as a response detailing what the error was.
     * This should be a GLOBAL middleware, where it is applied to all the requests.
+
+## How to run this application?
+
+In the terminal first run:
+`npm install`
+
+To run the application:
+`npm start`

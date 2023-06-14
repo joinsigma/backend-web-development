@@ -1,5 +1,7 @@
 # Assignment #3 ~ Deploy ShopApp application
 
+Follow this Code Along for more information regarding the deployment: <https://app.sigmaschool.co/posts/csdp-backend-development-level-2b-code-along-3-deploying-carapp-to-gcp/>
+
 For this assignment, you will have to create:
 
 * A GCP account, it will have free credits for 3 months.

@@ -8,3 +8,14 @@ You should add:
   * All the methods in the controllers
   
 Try to get at as close to 100% test coverage for the entire project. If you are unable to get 100%, state what file or files you are unable to test in the Github issue you have to create for this project.
+
+## How to run this application?
+
+In the terminal first run:
+`npm install`
+
+To run the application:
+`npm start`
+
+To run the tests:
+`npm run tests`
